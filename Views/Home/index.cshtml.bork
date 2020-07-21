@@ -1,0 +1,6 @@
+@{
+    Layout = _Layout.cshtml;
+}
+<h1>
+    Basic welcome page
+</h1>

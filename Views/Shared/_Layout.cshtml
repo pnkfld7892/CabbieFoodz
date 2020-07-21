@@ -1,0 +1,25 @@
+<html lang="en">
+   <head>
+       <meta name="viewport" content="width=device-height, initial-scale=1.0"/>
+       <meta charset="utf-8"/>
+       <title>CabbieFoodz - @ViewData["Title"]</title>
+       <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.min.css"/> 
+       <link rel="stylesheet" href="~/css/site.css"/>
+   </head>
+   <body>
+       <header>
+           <nav class="navbar navbar-expand-small navbar-toggleable navbar-dark bg-secondary border-bottom mb-3">
+                   <a class="navbar-brand"
+                      asp-area="" asp-controller="Home" asp-action="Index">CabbieFoodz</a>
+               <div class="container">
+                   <a class="nav" asp-controller="Foodz" asp-action="Index">My Foodz</a>
+               </div>
+           </nav>
+       </header>
+       <div class="container">
+           <main role="main" class="pb-3">
+                @RenderBody()
+           </main>
+       </div>
+   </body>
+</html>
