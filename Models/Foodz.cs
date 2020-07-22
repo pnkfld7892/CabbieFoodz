@@ -1,6 +1,10 @@
-public class Foodz
+namespace CabbieFoodz.Models
 {
-    public string id {get; set;}
-    public string Name {get; set;}
-    public string Description {get;set;}
+    public class Foodz
+    {
+        public string id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }
 }
+
