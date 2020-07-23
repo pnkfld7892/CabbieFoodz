@@ -1,3 +1,31 @@
 @model CabbieFoodz.Models.FoodzViewModel 
-<h1>FoodzPage</h1>
 
+
+<div class="container">
+    <a href="#" class="btn btn-warning float-right">Add New</a>
+    <div class="table-responsive ">
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">#</th>
+                    <th scope="col">Foodz Name</th>
+                    <th scope="col">Foodz Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @for(var i=0; i < Model.Foodiez.Count;i++)
+                {
+                    var num = i + 1;
+                    <tr>
+                        <th scope="row">@num</th>
+                        <td>@Model.Foodiez[i].Name</td>
+                        <td>@Model.Foodiez[i].Description</td>
+                        <td><a class="badge badge-secondary" href="#">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
