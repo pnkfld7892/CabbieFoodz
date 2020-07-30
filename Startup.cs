@@ -1,3 +1,4 @@
+using CabbieFoodz.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,7 @@ namespace CabbieFoodz
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSingleton<ICabbieFoodzRepository,MockFoodzRepo>();
 
         }
 
