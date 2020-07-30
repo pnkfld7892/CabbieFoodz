@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CabbieFoodz.Data;
 using CabbieFoodz.Models;
+using CabbieFoodz.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CabbieFoodz
@@ -20,10 +21,17 @@ namespace CabbieFoodz
         [HttpGet]
         public IActionResult Index()
         {
-            var model = new FoodzViewModel(){
+            var model = new FoodzIndexViewModel(){
                 Foodiez = _repo.GetAllFoodz()
             };
             return View(model);
+        }
+
+        [HttpGet]
+        [Route("foodz/{id}")]
+        public IActionResult FoodzView(string id)
+        {
+            return View();
         }
     }
 }
