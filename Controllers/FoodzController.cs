@@ -31,7 +31,16 @@ namespace CabbieFoodz
         [Route("foodz/{id}")]
         public IActionResult FoodzView(string id)
         {
-            return View();
+            var food = _repo.GetFoodById(id);
+            if(food == null)
+                return NotFound();
+            var viewModel = new FoodzViewModel
+            {
+                id = food.id,
+                Name = food.Name,
+                Description = food.Description
+            };
+            return View(viewModel);
         }
     }
 }
