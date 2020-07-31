@@ -7,20 +7,29 @@ namespace CabbieFoodz.Data
 {
     public class MockFoodzRepo : ICabbieFoodzRepository
     {
-        private List<Foodz> _foodz = new List<Foodz>()
+        private List<FoodzModel> _foodz = new List<FoodzModel>()
         {
-            new Foodz{id = Guid.NewGuid().ToString(),Name="Tortillas",Description="10 Pack of soft taco tortillas"},
-            new Foodz{id = Guid.NewGuid().ToString(),Name="Ortega Beans",Description="12 oz can of refried beans"},
-            new Foodz{id = Guid.NewGuid().ToString(),Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
+            new FoodzModel{id = Guid.NewGuid().ToString(),Name="Tortillas",Description="10 Pack of soft taco tortillas"},
+            new FoodzModel{id = Guid.NewGuid().ToString(),Name="Ortega Beans",Description="12 oz can of refried beans"},
+            new FoodzModel{id = Guid.NewGuid().ToString(),Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
         };
-        public List<Foodz> GetAllFoodz()
+
+        public void EditFood(FoodzModel food)
+        {
+            
+        }
+
+
+        public List<FoodzModel> GetAllFoodz()
         {
             return _foodz;
         }
 
-        public Foodz GetFoodById(string id)
+        public FoodzModel GetFoodById(string id)
         {
             return _foodz.FirstOrDefault(f => f.id == id);
         }
+
+        
     }
 }

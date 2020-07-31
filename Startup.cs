@@ -1,3 +1,5 @@
+using System;
+using AutoMapper;
 using CabbieFoodz.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,6 +16,7 @@ namespace CabbieFoodz
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSingleton<ICabbieFoodzRepository,MockFoodzRepo>();
 
         }

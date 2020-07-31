@@ -5,6 +5,6 @@ namespace CabbieFoodz.ViewModels
 {
     public class FoodzIndexViewModel
     {
-        public List<Foodz> Foodiez{get;set;}
+        public List<FoodzModel> Foodiez{get;set;}
     }
 }

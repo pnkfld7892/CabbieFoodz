@@ -1,6 +1,6 @@
 namespace CabbieFoodz.Models
 {
-    public class Foodz
+    public class FoodzModel
     {
         public string id { get; set; }
         public string Name { get; set; }
