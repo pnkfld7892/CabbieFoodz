@@ -9,9 +9,9 @@ namespace CabbieFoodz.Data
     {
         private List<FoodzModel> _foodz = new List<FoodzModel>()
         {
-            new FoodzModel{id = Guid.NewGuid().ToString(),Name="Tortillas",Description="10 Pack of soft taco tortillas"},
-            new FoodzModel{id = Guid.NewGuid().ToString(),Name="Ortega Beans",Description="12 oz can of refried beans"},
-            new FoodzModel{id = Guid.NewGuid().ToString(),Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
+            new FoodzModel{id = 1,Name="Tortillas",Description="10 Pack of soft taco tortillas"},
+            new FoodzModel{id = 2,Name="Ortega Beans",Description="12 oz can of refried beans"},
+            new FoodzModel{id = 3,Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
         };
 
 
@@ -21,7 +21,7 @@ namespace CabbieFoodz.Data
             return _foodz;
         }
 
-        public FoodzModel GetFoodById(string id)
+        public FoodzModel GetFoodById(int id)
         {
             return _foodz.FirstOrDefault(f => f.id == id);
         }

@@ -6,7 +6,7 @@ namespace CabbieFoodz.Data
     public interface ICabbieFoodzRepository
     {
         public List<FoodzModel> GetAllFoodz();
-        public FoodzModel GetFoodById(string id);
+        public FoodzModel GetFoodById(int id);
         public void UpdateFood(FoodzModel model);
     }
 }

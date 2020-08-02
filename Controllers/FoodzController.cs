@@ -31,7 +31,7 @@ namespace CabbieFoodz
 
         [HttpGet]
         [Route("foodz/{id}")]
-        public IActionResult FoodzView(string id)
+        public IActionResult FoodzView(int id)
         {
             var food = _repo.GetFoodById(id);
             if(food == null)
