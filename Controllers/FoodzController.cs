@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using CabbieFoodz.Data;
+using CabbieFoodz.Models;
 using CabbieFoodz.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,6 +53,22 @@ namespace CabbieFoodz
            }
            _mapper.Map(model,food);
            _repo.UpdateFood(food);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        [Route("foodz/create")]
+        public IActionResult CreateFoodz()
+        {
+            return View(new FoodzViewModel());
+        }
+
+        [HttpPost]
+        [Route("foodz/create")]
+        public IActionResult CreateFoodz(FoodzViewModel model)
+        {
+            var foodModel = _mapper.Map<FoodzModel>(model);
+            _repo.CreateFoodz(foodModel);
             return RedirectToAction("Index");
         }
     }

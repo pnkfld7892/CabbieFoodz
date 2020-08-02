@@ -14,7 +14,11 @@ namespace CabbieFoodz.Data
             new FoodzModel{id = 3,Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
         };
 
-
+        public void CreateFoodz(FoodzModel foodModel)
+        {
+            foodModel.id = _foodz.Count + 1;
+            _foodz.Add(foodModel);
+        }
 
         public List<FoodzModel> GetAllFoodz()
         {
