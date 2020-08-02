@@ -7,6 +7,6 @@ namespace CabbieFoodz.Data
     {
         public List<FoodzModel> GetAllFoodz();
         public FoodzModel GetFoodById(string id);
-        public void EditFood(FoodzModel food);
+        public void UpdateFood(FoodzModel model);
     }
 }

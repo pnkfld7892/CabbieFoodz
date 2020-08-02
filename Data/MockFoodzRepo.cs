@@ -14,10 +14,6 @@ namespace CabbieFoodz.Data
             new FoodzModel{id = Guid.NewGuid().ToString(),Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
         };
 
-        public void EditFood(FoodzModel food)
-        {
-            
-        }
 
 
         public List<FoodzModel> GetAllFoodz()
@@ -30,6 +26,14 @@ namespace CabbieFoodz.Data
             return _foodz.FirstOrDefault(f => f.id == id);
         }
 
-        
+        public void UpdateFood(FoodzModel model)
+        {
+            var food = _foodz.FirstOrDefault(f=> f.id ==model.id);
+
+            if(food ==null)
+                throw new ArgumentNullException("Food couldn't be found");
+            food.Name = model.Name;
+            food.Description = model.Description;
+        }
     }
 }

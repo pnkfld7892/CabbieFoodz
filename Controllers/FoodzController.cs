@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using CabbieFoodz.Data;
-using CabbieFoodz.Models;
 using CabbieFoodz.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,13 +35,9 @@ namespace CabbieFoodz
         {
             var food = _repo.GetFoodById(id);
             if(food == null)
+            {
                 return NotFound();
-//            var viewModel = new FoodzViewModel
- //           {
- //               id = food.id,
- //               Name = food.Name,
- //               Description = food.Description
- //           };
+            }
             return View(_mapper.Map<FoodzViewModel>(food));
         }
 
@@ -50,8 +45,14 @@ namespace CabbieFoodz
         [Route("foodz/{id}")]
         public IActionResult FoodzView(FoodzViewModel model)
         {
-            
-            return View(model);
+           var food = _repo.GetFoodById(model.id);
+           if(food==null)
+           {
+               return NotFound();
+           }
+           _mapper.Map(model,food);
+           _repo.UpdateFood(food);
+            return RedirectToAction("Index");
         }
     }
 }
