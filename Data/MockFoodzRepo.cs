@@ -20,7 +20,7 @@ namespace CabbieFoodz.Data
             _foodz.Add(foodModel);
         }
 
-        public List<Foodz> GetAllFoodz()
+        public List<Foodz> GetFoodz()
         {
             return _foodz;
         }
@@ -38,6 +38,17 @@ namespace CabbieFoodz.Data
                 throw new ArgumentNullException("Food couldn't be found");
             food.Name = model.Name;
             food.Description = model.Description;
+        }
+
+        
+        public List<Cabbie> GetCabbies()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Cabbie GetCabbieById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

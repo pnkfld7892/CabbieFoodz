@@ -25,7 +25,7 @@ namespace CabbieFoodz
         public IActionResult Index()
         {
             var model = new FoodzIndexViewModel(){
-                Foodiez = _repo.GetAllFoodz()
+                Foodiez = _repo.GetFoodz()
             };
             return View(model);
         }
