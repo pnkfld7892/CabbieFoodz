@@ -8,7 +8,8 @@ namespace CabbieFoodz.Profiles
     {
         public CFProfile()
         {
-            CreateMap<FoodzModel, FoodzViewModel>();
-            CreateMap<FoodzViewModel,FoodzModel>();        }
+            CreateMap<Foodz, FoodzViewModel>();
+            CreateMap<FoodzViewModel, Foodz>();
+        }
     }
 }

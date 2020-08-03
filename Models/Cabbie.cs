@@ -1,6 +1,14 @@
-public class Cabbie
-{
+using System.Collections.Generic;
 
-    public string id {get; set;}
-    public string name {get; set;}
+namespace CabbieFoodz.Models
+{
+    public class Cabbie
+    {
+        public int id {get;set;}
+        public string Name{get;set;}
+        public string Description {get;set;}
+
+        public IEnumerable<FoodInCabbie> FoodzInCabbie {get;set;}
+
+    }
 }

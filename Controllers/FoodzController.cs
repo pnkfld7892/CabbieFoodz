@@ -67,7 +67,7 @@ namespace CabbieFoodz
         [Route("foodz/create")]
         public IActionResult CreateFoodz(FoodzViewModel model)
         {
-            var foodModel = _mapper.Map<FoodzModel>(model);
+            var foodModel = _mapper.Map<Foodz>(model);
             _repo.CreateFoodz(foodModel);
             return RedirectToAction("Index");
         }
