@@ -25,7 +25,7 @@ namespace CabbieFoodz
         public IActionResult Index()
         {
             var model = new FoodzIndexViewModel(){
-                Foodiez = _repo.GetFoodz()
+                Foodiez = _mapper.Map<List<Foodz>,List<FoodzViewModel>>(_repo.GetFoodz()),
             };
             return View(model);
         }
@@ -46,7 +46,7 @@ namespace CabbieFoodz
         [Route("foodz/{id}")]
         public IActionResult FoodzView(FoodzViewModel model)
         {
-           var food = _repo.GetFoodById(model.id);
+           var food = _repo.GetFoodById(model.Id);
            if(food==null)
            {
                return NotFound();

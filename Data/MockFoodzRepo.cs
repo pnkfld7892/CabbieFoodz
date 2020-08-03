@@ -9,14 +9,14 @@ namespace CabbieFoodz.Data
     {
         private List<Foodz> _foodz = new List<Foodz>()
         {
-            new Foodz{id = 1,Name="Tortillas",Description="10 Pack of soft taco tortillas"},
-            new Foodz{id = 2,Name="Ortega Beans",Description="12 oz can of refried beans"},
-            new Foodz{id = 3,Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
+            new Foodz{Id = 1,Name="Tortillas",Description="10 Pack of soft taco tortillas"},
+            new Foodz{Id = 2,Name="Ortega Beans",Description="12 oz can of refried beans"},
+            new Foodz{Id = 3,Name="Petitie Diced Tomatoes",Description="18 oz can of petite diced tomatoes"}
         };
 
         public void CreateFoodz(Foodz foodModel)
         {
-            foodModel.id = _foodz.Count + 1;
+            foodModel.Id = _foodz.Count + 1;
             _foodz.Add(foodModel);
         }
 
@@ -27,12 +27,12 @@ namespace CabbieFoodz.Data
 
         public Foodz GetFoodById(int id)
         {
-            return _foodz.FirstOrDefault(f => f.id == id);
+            return _foodz.FirstOrDefault(f => f.Id == id);
         }
 
         public void UpdateFood(Foodz model)
         {
-            var food = _foodz.FirstOrDefault(f=> f.id ==model.id);
+            var food = _foodz.FirstOrDefault(f=> f.Id ==model.Id);
 
             if(food ==null)
                 throw new ArgumentNullException("Food couldn't be found");
