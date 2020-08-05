@@ -70,6 +70,7 @@ namespace CabbieFoodz
         {
             var foodModel = _mapper.Map<Food>(model);
             _repo.CreateFoodz(foodModel);
+            _repo.SaveChanges();
             return RedirectToAction("Index");
         }
     }
