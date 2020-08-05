@@ -22,12 +22,12 @@ namespace CabbieFoodz
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CFDbContext>(options =>
+            services.AddDbContext<CabbieFoodzContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("CabbieFoodzDb")));
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddSingleton<ICabbieFoodzRepository,MockFoodzRepo>();
+            services.AddScoped<ICabbieFoodzRepository,SqlCabbieFoodzRepository>();
 
         }
 

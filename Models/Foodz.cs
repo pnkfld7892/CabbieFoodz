@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CabbieFoodz.Models
 {
-    public class Foodz
+    public class Food
     {
         public int Id { get; set; }
         [Required]

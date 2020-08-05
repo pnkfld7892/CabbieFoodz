@@ -1,16 +1,22 @@
 ﻿using System;
+using CabbieFoodz.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CabbieFoodz.Data
 {
-    public partial class CFDbContext : DbContext
+    public partial class CabbieFoodzContext : DbContext
     {
-        public CFDbContext()
+        public DbSet<Food> Foodz{get;set;}
+        //TODO: Clean up Models and ReScaffold migrations
+        public DbSet<Cabbie> Cabbies{get;set;}
+        public DbSet<FoodInCabbie> FoodInCabbies{get;set;}
+
+        public CabbieFoodzContext()
         {
         }
 
-        public CFDbContext(DbContextOptions<CFDbContext> options)
+        public CabbieFoodzContext(DbContextOptions<CabbieFoodzContext> options)
             : base(options)
         {
         }
