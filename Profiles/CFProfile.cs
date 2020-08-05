@@ -10,6 +10,8 @@ namespace CabbieFoodz.Profiles
         {
             CreateMap<Food, FoodzViewModel>();
             CreateMap<FoodzViewModel, Food>();
+            CreateMap<Cabbie,CabbieViewModel>();
+            CreateMap<CabbieViewModel,Cabbie>();
         }
     }
 }

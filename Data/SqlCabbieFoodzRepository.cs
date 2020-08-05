@@ -30,7 +30,7 @@ namespace CabbieFoodz.Data
 
         public List<Cabbie> GetCabbies()
         {
-            throw new System.NotImplementedException();
+            return _context.Cabbies.ToList();
         }
 
         public Food GetFoodById(int id)
