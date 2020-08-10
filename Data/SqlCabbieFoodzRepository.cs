@@ -25,7 +25,7 @@ namespace CabbieFoodz.Data
 
         public Cabbie GetCabbieById(int id)
         {
-            throw new System.NotImplementedException();
+            return _context.Cabbies.FirstOrDefault(c => c.Id == id);
         }
 
         public List<Cabbie> GetCabbies()
