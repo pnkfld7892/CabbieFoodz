@@ -12,6 +12,8 @@ namespace CabbieFoodz.Data
 
         public List<Cabbie> GetCabbies();
         public Cabbie GetCabbieById(int id);
+        public List<FoodInCabbie> GetFoodInCabbies();
+        public List<FoodInCabbie> GetFoodInCabbieByCabbieId(int cabbieId);
         public bool SaveChanges();
     }
 }

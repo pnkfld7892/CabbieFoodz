@@ -31,6 +31,8 @@ namespace CabbieFoodz.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //TODO: change the foodincabbie model to have a composite key
+            //this has to be done with the flutent API here in onmodelcreating
             OnModelCreatingPartial(modelBuilder);
         }
 

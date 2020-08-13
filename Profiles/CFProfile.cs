@@ -12,6 +12,8 @@ namespace CabbieFoodz.Profiles
             CreateMap<FoodzViewModel, Food>();
             CreateMap<Cabbie,CabbieViewModel>();
             CreateMap<CabbieViewModel,Cabbie>();
+            CreateMap<FoodInCabbie,FoodInCabbieViewModel>();
+            CreateMap<FoodInCabbieViewModel,FoodInCabbie>();
         }
     }
 }

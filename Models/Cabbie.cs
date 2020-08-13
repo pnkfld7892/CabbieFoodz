@@ -17,7 +17,7 @@ namespace CabbieFoodz.Models
         [MaxLength(255)]
         public string Description {get;set;}
 
-        public IEnumerable<FoodInCabbie> FoodzInCabbie {get;set;}
+        public IList<FoodInCabbie> FoodzInCabbie {get;set;}
 
     }
 }

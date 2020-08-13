@@ -8,7 +8,7 @@ namespace CabbieFoodz.Models
 
         [Required]
         public int Qty { get; set; }
-        public int FoodzId { get; set; }
+        public int FoodId { get; set; }
         public Food Food { get; set; }
         public int CabbieId { get; set; }
         public Cabbie Cabbie { get; set; }

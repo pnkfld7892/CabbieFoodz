@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using CabbieFoodz.Models;
 
 namespace CabbieFoodz.Data
@@ -24,7 +25,11 @@ namespace CabbieFoodz.Data
         }
 
         public Cabbie GetCabbieById(int id)
-        {
+        { 
+            var cabbie = _context.Cabbies
+                .Include(c => c.FoodzInCabbie)
+                .ThenInclude(f => f.Food)
+                .FirstOrDefault(c => c.Id == id);
             return _context.Cabbies.FirstOrDefault(c => c.Id == id);
         }
 
@@ -51,6 +56,17 @@ namespace CabbieFoodz.Data
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
+        }
+
+        public List<FoodInCabbie> GetFoodInCabbies()
+        {
+            return _context.FoodInCabbies.ToList();
+        }
+
+        public List<FoodInCabbie> GetFoodInCabbieByCabbieId(int cabbieId)
+        {
+            var retVal = _context.FoodInCabbies.Where(f => f.Cabbie.Id == cabbieId).ToList();
+            return retVal;
         }
     }
 }

@@ -32,10 +32,12 @@ namespace CabbieFoodz.Controllers
         public IActionResult CabbieView(int id)
         {
             var cabbie = _repo.GetCabbieById(id);
+            //cabbie.FoodzInCabbie = _repo.GetFoodInCabbieByCabbieId(cabbie.Id);
             if (cabbie == null)
             {
                 return NotFound();
             }
+            var vm = _mapper.Map<CabbieViewModel>(cabbie);
             return View(_mapper.Map<CabbieViewModel>(cabbie));
         }
 

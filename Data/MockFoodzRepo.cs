@@ -55,5 +55,15 @@ namespace CabbieFoodz.Data
         {
             throw new NotImplementedException();
         }
+
+        public List<FoodInCabbie> GetFoodInCabbies()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FoodInCabbie> GetFoodInCabbieByCabbieId(int cabbieId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

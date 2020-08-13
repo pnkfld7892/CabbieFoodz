@@ -15,5 +15,28 @@
             <input asp-for="Description" type=text value="@Model.Description" class="form-control"/>
         
         </div>
+        <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">#</th>
+                    <th scope="col">Foodz Name</th>
+                    <th scope="col">Foodz Description</th>
+                </tr>
+            </thead>
+           <tbody>
+                @for(var i=0; i < Model.FoodzInCabbie.Count; i++)
+                {
+                    var num = i + 1;
+                    <tr>
+                        <th scope="row">@num</th>
+                        <td>@Model.FoodzInCabbie[i].Food.Name</td>
+                        <td>@Model.FoodzInCabbie[i].Food.Description</td>
+                    </tr>
+                }
+
+           </tbody>
+        </table>
+        </div>
     </form>
 </div>

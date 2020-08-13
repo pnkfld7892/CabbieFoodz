@@ -2,14 +2,16 @@
 using CabbieFoodz.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CabbieFoodz.Migrations
 {
     [DbContext(typeof(CabbieFoodzContext))]
-    partial class CabbieFoodzContextModelSnapshot : ModelSnapshot
+    [Migration("20200810022911_FixFoodInCabbieModel")]
+    partial class FixFoodInCabbieModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
