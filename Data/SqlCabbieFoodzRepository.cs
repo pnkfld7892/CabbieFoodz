@@ -65,7 +65,8 @@ namespace CabbieFoodz.Data
 
         public List<FoodInCabbie> GetFoodInCabbieByCabbieId(int cabbieId)
         {
-            var retVal = _context.FoodInCabbies.Where(f => f.Cabbie.Id == cabbieId).ToList();
+            var retVal = _context.FoodInCabbies
+                .Where(f => f.Cabbie.Id == cabbieId).ToList();
             return retVal;
         }
     }

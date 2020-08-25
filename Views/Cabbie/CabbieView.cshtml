@@ -22,6 +22,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Foodz Name</th>
                     <th scope="col">Foodz Description</th>
+                    <th scope="col">Qty in Cab</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
            <tbody>
@@ -32,6 +34,16 @@
                         <th scope="row">@num</th>
                         <td>@Model.FoodzInCabbie[i].Food.Name</td>
                         <td>@Model.FoodzInCabbie[i].Food.Description</td>
+                        <td>@Model.FoodzInCabbie[i].Qty</td>
+                        <td>
+                        <!--TODO: Figure out how to increment/decrement the count -->
+                            <a class="btn btn-outline-primary btn-sm" href="#">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                            <a class="btn btn-outline-warning btn-sm" href="#">
+                                <i class="fas fa-minus"></i>
+                            </a>
+                        </td>
                     </tr>
                 }
 

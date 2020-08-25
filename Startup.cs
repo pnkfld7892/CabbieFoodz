@@ -24,6 +24,7 @@ namespace CabbieFoodz
         {
             services.AddDbContext<CabbieFoodzContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("CabbieFoodzDb")));
+            services.AddControllers();
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
